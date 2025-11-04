@@ -1,0 +1,17 @@
+# .coderabbit.yaml - starter example
+review:
+  auto_review: true           # automatically run on PR creation/updates
+  languages:
+    - javascript
+    - python
+  ignore_files:
+    - "node_modules/**"
+    - "dist/**"
+  summary:
+    enabled: true
+    max_files: 10
+security:
+  scan_severity: medium
+rules:
+  - id: "no-console"
+    enabled: false
