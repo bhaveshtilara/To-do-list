@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -20,6 +19,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-600 text-white px-6 py-3 flex justify-between items-center shadow-md">
+      {/* App Title */}
       <h1
         className="text-2xl font-bold tracking-wide cursor-pointer"
         onClick={() => navigate("/")}
@@ -27,9 +27,16 @@ export default function Navbar() {
         📝 To-Do App
       </h1>
 
+      {/* Right Section */}
       <div className="flex items-center gap-4">
         {user ? (
           <>
+            {/* Greeting */}
+            <span className="text-sm sm:text-base font-medium">
+              👋 Hi, <span className="font-semibold">{user.username}</span>
+            </span>
+
+            {/* Links */}
             <Link to="/dashboard" className="hover:underline">
               Dashboard
             </Link>
@@ -40,6 +47,7 @@ export default function Navbar() {
               </Link>
             )}
 
+            {/* Logout Button */}
             <button
               onClick={handleLogout}
               className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg transition"
